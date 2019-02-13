@@ -1,0 +1,15 @@
+# This is Git's per-user configuration file.
+[user]
+name = Carl-Johan Schenström
+email = ...
+
+[alias]
+br=branch
+bra=branch -av
+co=checkout
+ls=ls-files
+st=status -sb -uno
+sta=status -sb
+
+[includeIf "gitdir:~/Projects/GU/"]
+path = ~/.gitconfig.gu

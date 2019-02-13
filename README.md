@@ -1,2 +1,1 @@
-# home
-Home of my $HOME
+These are my dotfiles, as well as some other settings.
