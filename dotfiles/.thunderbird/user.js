@@ -1,0 +1,14 @@
+user_pref("calendar.alarms.onforevents", 1);
+user_pref("calendar.alarms.playsound", false);
+user_pref("calendar.view.showLocation", true);
+user_pref("calendar.view.visiblehours", 15);
+user_pref("general.warnOnAboutConfig", false);
+user_pref("mail.biff.play_sound", false);
+user_pref("mail.compose.attachment_reminder", false);
+user_pref("mail.showCondensedAddresses", false);
+user_pref("mail.startup.enabledMailCheckOnce", true);
+user_pref("mail.tabs.drawInTitlebar", true);
+user_pref("mail.tabs.loadInBackground", false);
+user_pref("mail.tabs.loadInBackground", false);
+user_pref("mailnews.reply_in_default_charset", true);
+user_pref("mailnews.start_page.enabled", false);

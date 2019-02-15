@@ -1,0 +1,10 @@
+user_pref("browser.link.open_newwindow", 1);
+user_pref("browser.link.open_newwindow.override.external", 3);
+user_pref("browser.tabs.drawInTitlebar", true);
+user_pref("browser.urlbar.trimURLs", false);
+user_pref("dom.ipc.processCount", -1);
+user_pref("general.warnOnAboutConfig", false);
+user_pref("intl.accept_languages", "sv,en-us,en");
+user_pref("middlemouse.contentLoadURL", true);
+user_pref("signon.rememberSignons", false);
+user_pref("ui.key.menuAccessKey", 0);
