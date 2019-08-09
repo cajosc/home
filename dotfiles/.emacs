@@ -71,3 +71,17 @@
 
 ;; Installera valda paket
 (package-install-selected-packages)
+
+;; Tramp med Openshift/OKD
+;; FIXA: Autocompletion (med projekt?)
+(require 'tramp)
+(add-to-list 'tramp-methods '("oc"
+			      (tramp-login-program "oc")
+			      (tramp-login-args
+			       (("rsh")
+				("%h")))
+			      (tramp-remote-shell "/bin/sh")
+			      (tramp-remote-shell-args
+			       (("-i")
+				("-c")))
+			      ))
