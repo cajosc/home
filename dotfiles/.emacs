@@ -45,6 +45,15 @@
 (global-set-key (kbd "<M-left>") 'previous-buffer)
 (global-set-key (kbd "<M-right>") 'next-buffer)
 
+;; Dired-x
+(load "dired-x")
+(setq dired-listing-switches "-alh")
+;; Dölj filer per default
+(add-hook 'dired-mode-hook (lambda () (dired-omit-mode)))
+;; Växla med "h"
+(define-key dired-mode-map "h" 'dired-omit-mode)
+(setq dired-omit-files (concat dired-omit-files "\\|^\\..+$"))
+
 ;; Utskrifter
 (setq ps-print-header nil)
 (setq ps-paper-type 'a4)
