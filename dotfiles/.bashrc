@@ -17,6 +17,8 @@ export PATH
 
 # User specific aliases and functions
 
+alias cdtemp='cd $(mktemp -d)'
+
 which oc > /dev/null 2>&1 && source <( oc completion bash )
 
 function ldapsearch () {
