@@ -30,9 +30,12 @@ function ldapsearch () {
 	"$@" | \
 	while read field value ; do
 	    if [[ "$field" =~ ::$ ]] ; then
+		field="${field::-1}"
 		decoded=$(echo $value | base64 -d)
 		echo $decoded | grep -q '[[:cntrl:]]' || value=$decoded
 	    fi
-	    echo "$field $value"
+	    echo -n $field
+	    [ -n "$value" ] && echo -n " $value"
+	    echo
 	done 2>/dev/null
 }
