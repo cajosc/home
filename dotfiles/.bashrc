@@ -21,6 +21,8 @@ alias cdtemp='cd $(mktemp -d)'
 
 which oc > /dev/null 2>&1 && source <( oc completion bash )
 
+which rclone > /dev/null 2>&1 && source <( rclone genautocomplete bash /dev/stdout )
+
 function ldapsearch () {
     /usr/bin/ldapsearch \
 	-o ldif-wrap=no \
@@ -39,3 +41,9 @@ function ldapsearch () {
 	    echo
 	done 2>/dev/null
 }
+
+complete -C /var/home/cjs/.local/bin/mc mc
+
+[ -f /usr/share/git-core/contrib/completion/git-prompt.sh ] && . /usr/share/git-core/contrib/completion/git-prompt.sh
+PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+export GIT_PS1_SHOWDIRTYSTATE=1

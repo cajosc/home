@@ -70,7 +70,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (php-mode apache-mode markdown-toc yaml-mode markdown-mode dockerfile-mode))))
+    (ini-mode php-mode apache-mode markdown-toc yaml-mode markdown-mode dockerfile-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -94,3 +94,7 @@
 			       (("-i")
 				("-c")))
 			      ))
+
+;; Markdown
+(setq markdown-command "toolbox run pandoc -t html4 -V lang=sv")
+(setq markdown-command-needs-filename t)
