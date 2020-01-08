@@ -10,5 +10,6 @@ user_pref("mail.startup.enabledMailCheckOnce", true);
 user_pref("mail.tabs.drawInTitlebar", true);
 user_pref("mail.tabs.loadInBackground", false);
 user_pref("mail.tabs.loadInBackground", false);
+user_pref("mailnews.default_view_flags", 1);
 user_pref("mailnews.reply_in_default_charset", true);
 user_pref("mailnews.start_page.enabled", false);
