@@ -4,7 +4,7 @@
 (package-initialize)
 
 ;; Startfönster
-(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+;(add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 ;; Alla fönster
 (add-to-list 'default-frame-alist '(font . "Monospace-9"))
@@ -70,7 +70,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ini-mode php-mode apache-mode markdown-toc yaml-mode markdown-mode dockerfile-mode))))
+    (indent-guide ini-mode php-mode apache-mode markdown-toc yaml-mode markdown-mode dockerfile-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -98,3 +98,7 @@
 ;; Markdown
 (setq markdown-command "toolbox run pandoc -t html4 -V lang=sv")
 (setq markdown-command-needs-filename t)
+(put 'downcase-region 'disabled nil)
+
+;; YAML
+(add-hook 'yaml-mode-hook (lambda () (indent-guide-mode)))
