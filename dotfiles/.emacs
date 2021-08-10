@@ -94,7 +94,6 @@
 ;; Markdown
 (setq markdown-command "toolbox run pandoc -t html4 -V lang=sv")
 (setq markdown-command-needs-filename t)
-(put 'downcase-region 'disabled nil)
 
 ;; YAML
 (add-hook 'yaml-mode-hook (lambda () (indent-guide-mode)))
