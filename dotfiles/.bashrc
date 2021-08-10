@@ -30,6 +30,7 @@ function ldapsearch () {
 	-x \
 	-y ~/.gupasswd \
 	"$@" | \
+	egrep -v '^$|^#' | \
 	while read field value ; do
 	    if [[ "$field" =~ ::$ ]] ; then
 		field="${field::-1}"
