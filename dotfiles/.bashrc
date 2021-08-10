@@ -45,8 +45,12 @@ function ldapsearch () {
 
 complete -C /var/home/cjs/.local/bin/mc mc
 
-[ -f /usr/share/git-core/contrib/completion/git-prompt.sh ] && . /usr/share/git-core/contrib/completion/git-prompt.sh
-export GIT_PS1_SHOWDIRTYSTATE=1
+if [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ] ; then
+    . /usr/share/git-core/contrib/completion/git-prompt.sh
+    export GIT_PS1_SHOWDIRTYSTATE=1
+else
+    alias __git_ps1=false
+fi
 
 __red="\[\e[31m\]"
 __green="\[\e[32m\]"
