@@ -52,6 +52,12 @@ else
     alias __git_ps1=false
 fi
 
+if [ -f /run/.containerenv ] ; then
+    __toolbox_name="[$(awk 'BEGIN{FS="="} $1 == "name" {print substr($2, 2, length($2)-2)}' /run/.containerenv)]"
+else
+    __toolbox_name=""
+fi
+
 __red="\[\e[31m\]"
 __green="\[\e[32m\]"
 __yellow="\[\e[33m\]"
@@ -61,7 +67,7 @@ __cyan="\[\e[36m\]"
 __reset="\[\e[0m\]"
 
 if [ -n "$PS1" ] ; then
-    PS1="[${__green}\u@\h${__reset} ${__yellow}🗀 \w${__reset} ${__cyan}☸\$(oc whoami -c | sed -e 's#^\([^/]*\)/\([^/:]*\).*/\(.*\)#\3@\2/\1#g')${__reset}${__red}\$(__git_ps1 \" %s\")${__reset}]\$ "
+    PS1="[${__green}\u@\h${__toolbox_name}${__reset} ${__yellow}🗀 \w${__reset} ${__cyan}☸\$(oc whoami -c | sed -e 's#^\([^/]*\)/\([^/:]*\).*/\(.*\)#\3@\2/\1#g')${__reset}${__red}\$(__git_ps1 \" %s\")${__reset}]\$ "
 fi
 
 export EDITOR=vi
