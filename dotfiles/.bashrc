@@ -45,5 +45,16 @@ function ldapsearch () {
 complete -C /var/home/cjs/.local/bin/mc mc
 
 [ -f /usr/share/git-core/contrib/completion/git-prompt.sh ] && . /usr/share/git-core/contrib/completion/git-prompt.sh
-PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 export GIT_PS1_SHOWDIRTYSTATE=1
+
+__red="\[\e[31m\]"
+__green="\[\e[32m\]"
+__yellow="\[\e[33m\]"
+__blue="\[\e[34m\]"
+__magenta="\[\e[35m\]"
+__cyan="\[\e[36m\]"
+__reset="\[\e[0m\]"
+
+if [ -n "$PS1" ] ; then
+    PS1="[${__green}\u@\h${__reset} ${__yellow}🗀 \w${__reset} ${__cyan}☸\$(oc whoami -c | sed -e 's#^\([^/]*\)/\([^/:]*\).*/\(.*\)#\3@\2/\1#g')${__reset}${__red}\$(__git_ps1 \" %s\")${__reset}]\$ "
+fi
