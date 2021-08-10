@@ -3,9 +3,6 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
-;; Startfönster
-;(add-to-list 'initial-frame-alist '(fullscreen . maximized))
-
 ;; Alla fönster
 (add-to-list 'default-frame-alist '(font . "Monospace-9"))
 
