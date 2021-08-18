@@ -3,6 +3,7 @@ user_pref("calendar.alarms.playsound", false);
 user_pref("calendar.view.showLocation", true);
 user_pref("calendar.view.visiblehours", 15);
 user_pref("general.warnOnAboutConfig", false);
+user_pref("mail.advance_on_spacebar", false);
 user_pref("mail.biff.play_sound", false);
 user_pref("mail.compose.attachment_reminder", false);
 user_pref("mail.showCondensedAddresses", false);
