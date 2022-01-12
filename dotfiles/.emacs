@@ -43,8 +43,8 @@
 (global-set-key (kbd "C-x C-b") 'buffer-menu)
 
 ;; M-<left>/<right> för previous-/next-buffer
-(global-set-key (kbd "<M-left>") 'previous-buffer)
-(global-set-key (kbd "<M-right>") 'next-buffer)
+(global-set-key (kbd "M-<left>") 'previous-buffer)
+(global-set-key (kbd "M-<right>") 'next-buffer)
 
 ;; Dired-x
 (load "dired-x")
@@ -105,3 +105,9 @@
 ;; Plantuml
 (require 'plantuml-mode)
 (setq plantuml-server-url "http://localhost:6742")
+
+;; Window Resize
+(global-set-key (kbd "M-S-<left>") 'shrink-window-horizontally)
+(global-set-key (kbd "M-S-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "M-S-<down>") 'shrink-window)
+(global-set-key (kbd "M-S-<up>") 'enlarge-window)
