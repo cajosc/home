@@ -3,6 +3,10 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
+;; Lokala paket
+(let ((default-directory (concat user-emacs-directory "local/")))
+  (normal-top-level-add-subdirs-to-load-path))
+
 ;; Alla fönster
 (add-to-list 'default-frame-alist '(font . "Monospace-9"))
 
@@ -97,3 +101,7 @@
 
 ;; YAML
 (add-hook 'yaml-mode-hook (lambda () (indent-guide-mode)))
+
+;; Plantuml
+(require 'plantuml-mode)
+(setq plantuml-server-url "http://localhost:6742")
